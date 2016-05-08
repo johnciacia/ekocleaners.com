@@ -5,13 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous" async defer></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous" async defer></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,400italic,700italic,300italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Delius' rel='stylesheet' type='text/css'>
   <style>
-
     body {
       font-size: 14px;
       line-height: 1.7em;
@@ -22,6 +21,10 @@
     p {
         padding: 10px;
 
+    }
+
+    a, a:hover {
+      color: #0EC086;
     }
 
     hr {
@@ -37,9 +40,13 @@
       padding-bottom: 20px;
     }
 
+    .row:last-child {
+      padding-bottom: 0px;
+    }
+
     .hello {
       color: #fff;
-      background-color: #22A7E0;
+      background-color: #0EC086;
       font-size: 24px;
       padding: 5px;
       border-radius: 2px;
@@ -50,41 +57,19 @@
       font-size: 16px;
     }
 
+    .active > a {
+      color: #fff !important;
+      background: #0EC086 !important;
+    }
+
     .navbar-brand span {
       font-weight: 600;
     }
 
     .services {
-      background-color: #22A7E0;
+      background-color: #0EC086;
       color: #fff;
       font-weight: lighter;
-    }
-
-    .Flexible-container {
-        position: relative;
-        padding-bottom: 300px;
-        padding-top: 30px;
-        height: 0;
-        overflow: hidden;
-    }
-
-    .Flexible-container iframe,
-    .Flexible-container object,
-    .Flexible-container embed {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 300px;
-    }
-
-    .overlay {
-       background:transparent;
-       position:relative;
-       width:100%;
-       height:345px;
-       top:325px;
-       margin-top:-400px;
     }
 
     footer {
@@ -96,26 +81,42 @@
     .strike {
       text-decoration: line-through;
     }
+
+    .overlay {
+       background:transparent;
+       position:relative;
+       width:100%;
+       height:300px;
+       top:300px;
+       margin-top:-300px;
+    }
   </style>
 </head>
-<body>
+<body data-spy="scroll" data-target="#navigation" data-offset="50">
 
 
-  <nav class="navbar navbar-default navbar-fixed-top">
+  <nav class="navbar navbar-default navbar-fixed-top" id="navigation">
     <div class="container">
       <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
         <a href="/" class="navbar-brand" alt="EKO Cleaners">
           EKO<span>CLEANERS</span>
         </a>
       </div>
 
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
   </nav>
 
   <div class="container-flex">
@@ -212,12 +213,12 @@
     </div>
 
     <div class="row">
-      <div class="col-sm-12 Flexible-container">
-
-        <iframe scroll="false" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d774197.5954177458!2d-75.2433730677179!3d40.7134075087647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0xa6f4a3bc261b9b8f!2sEKO+Cleaners!5e0!3m2!1sen!2sus!4v1462652638449" width="1000" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+      <div class="col-sm-12">
         <div class="overlay" onClick="style.pointerEvents='none'"></div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d774185.4876170635!2d-75.24336170803682!3d40.71444876823048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25daac95291e9%3A0xa6f4a3bc261b9b8f!2sEKO+Cleaners!5e0!3m2!1sen!2sus!4v1462681883596" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
       </div>
     </div>
+
   </div>
 
   <footer>
@@ -232,6 +233,15 @@
     </div>
   </footer>
 
+  <script>
+    jQuery(document).ready(function() {
+      $('.navbar li a').click(function(event) {
+        event.preventDefault();
+        $($(this).attr('href'))[0].scrollIntoView();
+        scrollBy(0, -50);
+      });
+    });
+  </script>
 
 </body>
 </html>
